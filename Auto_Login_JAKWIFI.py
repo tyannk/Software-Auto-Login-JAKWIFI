@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.edge.options import Options
+from selenium.webdriver.chrome.options import Options
 from time import sleep
 import urllib.request
 import sys
@@ -18,7 +18,7 @@ def connect(link):  # Fungsi untuk mencoba membuka link/url, jika gagal akan men
         return False
 
 
-def checkWebDriver(url):
+def checkChromeDriver(url):
     try:
         # Pass in the folder used for storing/downloading chromedriver
         check_driver(url)
@@ -26,7 +26,7 @@ def checkWebDriver(url):
         print(e)
 
 
-checkWebDriver(WebDriverLocation)
+checkChromeDriver(WebDriverLocation)
 
 """ membuat pageLoadStrategy
 keterangan value :
@@ -34,12 +34,9 @@ keterangan value :
 normal          Complete            Used by default, waits for all resources to download
 eager           Interactive         DOM access is ready, but other resources like images may still be loading
 none            Any                 Does not block WebDriver at all """
-options = webdriver.EdgeOptions()
-options.binary_location = "C:\Program Files (x86)\Microsoft\Edge Dev\Application/msedge.exe"
-options.add_argument('--ignore-certificate-errors')
-options.add_argument('--ignore-ssl-errors')
+options = Options()
 options.page_load_strategy = 'eager'
-web = webdriver.Edge(options=options)
+web = webdriver.Chrome(options=options)
 
 
 connect(url)
