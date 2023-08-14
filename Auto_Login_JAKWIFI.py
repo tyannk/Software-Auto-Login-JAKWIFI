@@ -7,7 +7,7 @@ from webdriver_auto_update import check_driver
 
 
 url = "http://sso.lifepod.login/login?"
-WebDriverLocation = "C:\\Users\\tyann\\AppData\\Local\\Programs\\Python\\Python310"
+WebDriverLocation = "C:\\Users\\Tyan Nur\\AppData\\Local\\Programs\\Python\\Python311"
 
 
 def connect(link):  # Fungsi untuk mencoba membuka link/url, jika gagal akan mengembalikan nilai false
